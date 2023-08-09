@@ -48,9 +48,25 @@
       "type": 301
     }, 
     {
+      "source": "/guide/getting_started_with_snowpark_python{,/**}",
+      "destination": "/guide/getting_started_snowpark_machine_learning",
+      "type": 301
+    },
+    {
       "source": "/guide/getting_started_with_user_defined_functions{,/**}",
       "destination": "/guide/getting_started_with_user_defined_sql_functions",
       "type": 301
-    }  ]
+    },
+    {
+      "source": "/guide/build_a_data_clean_room_in_snowflake{,/**}",
+      "destination": "/guide/build_a_data_clean_room_in_snowflake_advanced",
+      "type": 301
+    },
+    {
+      "source": "/guide/snowflake_native_apps{,/**}",
+      "destination": "/guide/getting_started_with_native_apps",
+      "type": 301
+    }  
+  ]
   }
 }

@@ -1,7 +1,7 @@
 author: yarodmi
 id: vhol_data_vault
 summary: Building a Real-time Data Vault in Snowflake
-categories: Getting Started
+categories: data-engineering,architecture-patterns,solution-examples
 environments: web
 status: Published 
 feedback link: https://github.com/Snowflake-Labs/sfguides/issues
@@ -868,7 +868,7 @@ INCLUDE_QUERY_ID=TRUE;
 ALTER PIPE stg_orders_pp   REFRESH;
 ```
 
-5. Data is not automatically flowing through all the layers via asyncronous tasks. With the results you can validate: 
+5. Data is now automatically flowing through all the layers via asyncronous tasks. With the results you can validate: 
 
 ```sql
 SELECT 'l00_stg.stg_orders', count(1) FROM l00_stg.stg_orders

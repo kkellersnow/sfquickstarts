@@ -24,20 +24,26 @@ You can submit your own Quickstarts to be published on Snowflake's website by su
 
 ### Prerequisites
 
-  1. [Install Node 14](https://nodejs.org/en/download/); Homebrew installed? `brew install node@14`
-     - Install gulp-cli `npm i -g gulp-cli`
-  2. [Install Go](https://golang.org/doc/install); Homebrew installed? `brew install golang`
+  1. [Install Node Version Manager (nvm)](https://github.com/nvm-sh/nvm#installing-and-updating)
+     - Not sure if you have it installed? Run `nvm` or `nvm -v` at the command line and hit enter. If you encounter a "command not found" error, you likely do not have it installed.
+  2. Install Node v14 (required to run the site locally) using nvm: `nvm install 14`
+     - If you have Homebrew installed, run: `brew install node@14`
+  3. Install gulp-cli `npm i -g gulp-cli`
+  4. [Install Go](https://golang.org/doc/install)
+     - If you have Homebrew installed, run: `brew install golang`
      - Install claat `go install github.com/googlecodelabs/tools/claat@latest`
      - Ensure go and claat is in your `PATH` [claat path setup](#claat-related-errors)
-  3. **Optional**: install the live-reload plugin for Chrome: [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+  5. **Optional**: install the live-reload plugin for Chrome: [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
 ### Run locally
 
-  1. Fork this repository to your personal github account (top right of webpage, `fork` button)
+  1. Fork this repository to your personal GitHub account (top right of webpage, `fork` button)
   2. Clone your new fork `git clone git@github.com:<YOUR-USERNAME>/sfquickstarts.git sfquickstarts`
   3. Navigate to the site directory `cd sfquickstarts/site`
-  4. Install node dependencies `npm install`
-  5. Run the site `npm run serve`
+  4. Set the project to use Node v14 by running `nvm use`. If you an encounter an error stating you don't have the correct version installed, run `nvm install`. For more help, see steps 1 and 2 in the Prerequisites above.
+  5. Install node dependencies `npm install`
+  6. Run the site `npm run serve`
+  7. Open a browser to http://localhost:8000/
 
 Congratulations! You now have the Snowflake Quickstarts landing page running.
 
@@ -60,11 +66,11 @@ export PATH=$PATH:$HOME/go/bin
 
 ## Write Your First Quickstart
 
-  1. Terminate the running server with `ctrl C` and and navigate to the `sfguides` source directory `cd sfguides/src`
+  1. Terminate the running server with `ctrl C` and navigate to the `sfguides` source directory `cd sfguides/src`
      - In this directory, you will see all existing guides and their markdown files.
   2. Generate a new guide from the guide template `npm run template <GUIDE_NAME>` 
       - Don't use spaces in the name of your guide, instead use underscores.
-  3. Navigate to the newly generated guide (`cd sfguides/src/<GUIDE_NAME>`) and edit your guide in a tool like vscode.
+  3. Navigate to the newly generated guide (`cd sfguides/src/<GUIDE_NAME>`) and edit your guide in a tool like VS Code.
   4. Run the website again `npm run serve`
   5. As you edit and save changes, your changes will automatically load in the browser.
 
@@ -72,8 +78,8 @@ You can always read the [sample Quickstart](site/sfguides/src/sample/sample.md) 
 
 ### Tips
 
-- Review the [sample.md](site/sfguides/src/sample/sample.md) file to learn more about to to structure your Quickstart for the claat tool. 
-- You can see the supported Quickstart categories [here](site/app/styles/_overrides.scss). If you want to suggest a new category please create a github issue!
+- Review the [sample.md](site/sfguides/src/sample/sample.md) file to learn more about how to structure your Quickstart for the claat tool. 
+- You can see the supported Quickstart categories [here](site/app/styles/_overrides.scss). If you want to suggest a new category please create a GitHub issue!
 - Checkout [how to use VS Code to write markdown files](https://code.visualstudio.com/docs/languages/markdown)
 - If you want to learn more about Quickstarts, check out this [excellent tutorial](https://medium.com/@zarinlo/publish-technical-tutorials-in-google-codelab-format-b07ef76972cd)
 
@@ -89,4 +95,13 @@ You can always read the [sample Quickstart](site/sfguides/src/sample/sample.md) 
 8. Click the Pull Request button to open a new pull request
 9. Snowflake will review and approve the submission
 
-To learn more how to submit a pull request on GitHub in general, checkout github's [official documentation](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+To learn more about how to submit a pull request on GitHub in general, check out GitHub's [official documentation](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+
+## Reporting issues or errata in Quickstarts
+
+Quickstarts are not in the scope of Snowflake Global Support. Please do not file support cases for issues or errata in a Quickstart. If you encounter an issue in a Quickstart (outdated copy or data, typos, broken links, etc.), [please file an issue](https://github.com/Snowflake-Labs/sfquickstarts/issues/new/choose) in this repository. Be sure to include the following information:
+
+1. The title of the Quickstart
+2. A link to the Quickstart
+3. A description of the problem
+4. A proposed solution, if applicable (optional)
